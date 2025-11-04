@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letter for Fatimah 💌</title>
+  <style>
+    body {
+      background: linear-gradient(180deg, #ffe6f2, #fff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .envelope {
+      width: 180px;
+      height: 120px;
+      background: #ffb6c1;
+      position: relative;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+
+    .envelope:hover {
+      transform: scale(1.05);
+    }
+
+    .flap {
+      width: 0;
+      height: 0;
+      border-left: 90px solid transparent;
+      border-right: 90px solid transparent;
+      border-bottom: 60px solid #ff99aa;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: transform 0.6s ease;
+      transform-origin: top;
+    }
+
+    .letter {
+      width: 150px;
+      height: 90px;
+      background: #fff;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      border-radius: 5px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      text-align: center;
+      padding-top: 30px;
+      color: #ff4d6d;
+      font-weight: bold;
+      transform: translateY(50px);
+      opacity: 0;
+      transition: all 1s ease;
+    }
+
+    .open .flap {
+      transform: rotateX(180deg);
+    }
+
+    .open .letter {
+      transform: translateY(-60px);
+      opacity: 1;
+    }
+
+    .hearts {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+      opacity: 0;
+      transition: all 1.2s ease;
+    }
+
+    .open .hearts {
+      bottom: 140px;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="envelope" onclick="openLetter()">
+    <div class="flap"></div>
+    <div class="letter">I'm sorry<br>Fatimah 💌</div>
+    <div class="hearts">💖💞💗</div>
+  </div>
+
+  <script>
+    let opened = false;
+    function openLetter() {
+      if (!opened) {
+        document.querySelector('.envelope').classList.add('open');
+        opened = true;
+      }
+    }
+  </script>
+
+</body>
+</html>
